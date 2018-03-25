@@ -1,1 +1,3 @@
-git remote add origin git@gitee.com:Ernie1/unity3d-learning.git
+##我的CSDN地址
+https://blog.csdn.net/z_j_q_
+欢迎前来指点！
