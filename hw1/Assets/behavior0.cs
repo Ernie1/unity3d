@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class behavior0 : MonoBehaviour {
 
-	public int scale;
+	private int scale = 3;
 
-	int[,] matrix = new int [10, 10];
-	int height = 50, width = 50;
-	int firstX, firstY;
+	private int[,] matrix = new int [10, 10];
+	private int height = 50, width = 50;
+	private int firstX, firstY;
 
 	private Texture gouImg;
 	private Texture chaImg;
@@ -38,7 +38,7 @@ public class behavior0 : MonoBehaviour {
 		firstX = Screen.width / 2 - scale * width / 2;
 		firstY = Screen.height / 2 - scale * height / 2;
 	}
-	string count = "3";
+	private string count = "3";
 	void OnGUI () {
 		GUI.skin.button.fontSize = 20;
 		for (int i = 0; i < scale; ++i)
@@ -54,12 +54,14 @@ public class behavior0 : MonoBehaviour {
 					GUI.Button (new Rect (firstX + width * j, firstY + height * i, width, height), chaImg);
 			}
 		if (modi ())
-		if (GUI.Button (new Rect (firstX, firstY + scale * height + 30, width * scale-2, height), "Reset"))
+		if (GUI.Button (new Rect (firstX, firstY + scale * height + 30, width * scale-2, height), "重新开始"))
 				Reset ();
 		if (win () == 1)
 			GUI.Label (new Rect (firstX, firstY - height - 10, width * scale, height), "勾赢了", style);
 		else if(win() == 2)
 			GUI.Label (new Rect (firstX, firstY - height - 10, width * scale, height), "叉赢了", style);
+		else if(win() == 3)
+			GUI.Label (new Rect (firstX, firstY - height - 10, width * scale, height), "平局", style);
 
 		count = GUI.TextField(new Rect (firstX+width * scale/2-10, firstY + scale * height +5, 20, 20),count,1);
 		int o;
@@ -120,6 +122,12 @@ public class behavior0 : MonoBehaviour {
 				if (i == scale - 1)
 					return first;
 			}
-		return 0;
+		
+		for (int i = 0; i < scale; ++i)
+			for (int j = 0; j < scale; ++j)
+				if (matrix [i, j] == 0)
+					return 0;
+		//格子被填满，平局
+		return 3;
 	}
 }
