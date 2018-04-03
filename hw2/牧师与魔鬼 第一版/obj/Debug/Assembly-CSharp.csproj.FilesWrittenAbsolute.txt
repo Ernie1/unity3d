@@ -40,3 +40,7 @@
 /Users/zjq/unity3d-learning/hw2/牧师与魔鬼 第一版/Temp/bin/Debug/Unity.Cecil.Mdb.dll
 /Users/zjq/unity3d-learning/hw2/牧师与魔鬼 第一版/Temp/bin/Debug/UnityEditor.iOS.Extensions.Xcode.dll
 /Users/zjq/unity3d-learning/hw2/牧师与魔鬼 第一版/Temp/bin/Debug/UnityEditor.iOS.Extensions.Xcode.xml
+/Users/zjq/unity3d-learning/hw2/牧师与魔鬼 第一版/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/zjq/unity3d-learning/hw2/牧师与魔鬼 第一版/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/zjq/unity3d-learning/hw2/牧师与魔鬼 第一版/obj/Debug/Assembly-CSharp.dll
+/Users/zjq/unity3d-learning/hw2/牧师与魔鬼 第一版/obj/Debug/Assembly-CSharp.dll.mdb

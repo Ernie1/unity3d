@@ -15,7 +15,7 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
 
 	bool[] boatSeat;
 
-	private bool someObjectHandling;
+	private bool someObjectHandling, pausing;
 	private int handleNum;
 	private int sailTo;
 	private int boatSeatIndex;
@@ -23,7 +23,20 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
 	float dTime;
 	Vector3 speed, Gravity;
 
+	private SSDirector director;
+	private UserGUI userGUI;
+
 	void Awake () {
+		userGUI = gameObject.AddComponent<UserGUI> ();
+		userGUI.action = this;
+
+		director = SSDirector.getInstance ();
+		director.currentScenceController = this;
+		director.setFPS (60);
+		director.currentScenceController.LoadResources ();
+	}
+
+	public void LoadResources () {
 		boatPos = new Vector3[]{ new Vector3 (2, 0.1F, 0), new Vector3 (-2, 0.1F, 0) };
 		onBoat = new Vector3[]{ new Vector3 (-1.5F, 2, 0), new Vector3 (1.5F, 2, 0) };
 		priestPos = new Vector3[3, 2];
@@ -37,13 +50,6 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
 		boatSeat = new bool[]{ true, true };
 		someObjectHandling = false;
 
-		SSDirector director = SSDirector.getInstance ();
-		director.currentScenceController = this;
-		director.setFPS (60);
-		director.currentScenceController.LoadResources ();
-	}
-
-	public void LoadResources () {
 		bankHere = Instantiate (Resources.Load ("Prefabs/bank"), new Vector3 (5.25F, 0, 0), Quaternion.identity, null) as GameObject;
 		bankHere.name = "bankHere";
 		bankThere = Instantiate (Resources.Load ("Prefabs/bank"), new Vector3 (-5.25F, 0, 0), Quaternion.identity, null) as GameObject;
@@ -60,6 +66,35 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
 			devil [i] = Instantiate (Resources.Load ("Prefabs/devil"), devilPos [i, 0], Quaternion.identity, null) as GameObject;
 			devil [i].name = "devil" + i.ToString ();
 		}
+
+		pausing = false;
+		userGUI.status = 2;
+	}
+		
+	public void Pause () {
+		pausing = true;
+		userGUI.status = 3;
+	}
+
+	public void Resume () {
+		pausing = false;
+		userGUI.status = 2;
+	}
+
+	public void Restart () {
+		Destroy (bankHere);
+		Destroy (bankThere);
+		Destroy (boat);
+		Destroy (water);
+		foreach (GameObject e in priest)
+			Destroy (e);
+		foreach (GameObject e in devil)
+			Destroy (e);
+		LoadResources ();
+	}
+
+	public void GameOver () {
+		pausing = true;
 	}
 
 	//船在此岸 0，彼岸 1，否则 2
@@ -84,21 +119,21 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
 		return 2;
 	}
 
-	public void Pause () {
+//	public void Pause () {
+//
+//	}
+//
+//	public void Resume () {
+//
+//	}
+//
+//	public void Restart () {
+//
+//	}
 
-	}
-
-	public void Resume () {
-
-	}
-
-	public void Restart () {
-
-	}
-
-	public void GameOver () {
-		//SSDirector.getInstance().
-	}
+//	public void GameOver () {
+//		//SSDirector.getInstance().
+//	}
 
 	// Use this for initialization
 	void Start () {
@@ -259,7 +294,7 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
 	}
 
 	//0 lose 1 win 2 -
-	bool checkGame () {
+	int checkGame () {
 		int priestHere = 0, priestThere = 0, devilHere = 0, devilThere = 0;
 		for(int i=0;i<3;++i){
 			if (wherePriest (i) == 0)
@@ -290,19 +325,37 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
 		return 2;
 	}
 
+
 	// Update is called once per frame
 	void Update () {
-		if (!someObjectHandling && checkObjectClicked ())
-			handleClickedObject ();
-		if (someObjectHandling) {
-			if (handleNum == 0)
-				sail ();
-			else if (handleNum == 1)
-				ashore ();
-			else if (handleNum == 2)
-				aboard ();
+		if (!pausing) {
+			if (!someObjectHandling && checkObjectClicked ())
+				handleClickedObject ();
+			if (someObjectHandling) {
+				if (handleNum == 0)
+					sail ();
+				else if (handleNum == 1)
+					ashore ();
+				else if (handleNum == 2)
+					aboard ();
+			}
+			userGUI.status = checkGame ();
 		}
-		if (checkGame () == 0)
-			Debug.Log ("lose");
+	}
+
+	void IUserAction.GameOver () {
+		director.currentScenceController.GameOver ();
+	}
+
+	void IUserAction.Pause () {
+		director.currentScenceController.Pause ();
+	}
+
+	void IUserAction.Resume () {
+		director.currentScenceController.Resume ();
+	}
+
+	void IUserAction.Restart () {
+		director.currentScenceController.Restart ();
 	}
 }

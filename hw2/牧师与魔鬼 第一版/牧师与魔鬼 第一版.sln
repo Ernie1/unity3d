@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "牧师与魔鬼 第一版", "Assembly-CSharp.csproj", "{7B15F2A0-68B9-F493-BDBE-0FB587D8485E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "牧师与魔鬼 第一版", "Assembly-CSharp.csproj", "{119E6443-6F7E-A819-2E29-B1AC60C62E51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7B15F2A0-68B9-F493-BDBE-0FB587D8485E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B15F2A0-68B9-F493-BDBE-0FB587D8485E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B15F2A0-68B9-F493-BDBE-0FB587D8485E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B15F2A0-68B9-F493-BDBE-0FB587D8485E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119E6443-6F7E-A819-2E29-B1AC60C62E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119E6443-6F7E-A819-2E29-B1AC60C62E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119E6443-6F7E-A819-2E29-B1AC60C62E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119E6443-6F7E-A819-2E29-B1AC60C62E51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

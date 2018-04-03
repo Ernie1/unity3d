@@ -7,11 +7,13 @@ public interface ISceneController
 	void LoadResources();
 	void Pause (); 
 	void Resume ();
+	void Restart ();
+	void GameOver ();
 }  
 //暂停、恢复、退出
 public class SSDirector : System.Object  
 {  
-	private static SSDirector _instance;  
+	private static SSDirector _instance;
 
 	public ISceneController currentScenceController { get; set; }  
 	public bool running { get; set; }  
@@ -34,4 +36,5 @@ public class SSDirector : System.Object
 	{
 		Application.targetFrameRate = fps;  
 	}
+
 }  
