@@ -8,6 +8,7 @@ public interface IUserAction
 	void GameOver ();
 	void Pause ();
 	void Resume ();
+	bool checkObjectClicked ();
 }
 
 public class UserGUI : MonoBehaviour {
@@ -39,7 +40,7 @@ public class UserGUI : MonoBehaviour {
 		}
 		if (status == 1) {
 			action.GameOver ();
-			if (GUI.Button (new Rect (Screen.width / 2 - width / 2, Screen.height / 2 - height / 2, width, height), "Game Over!\nRestart")) {
+			if (GUI.Button (new Rect (Screen.width / 2 - width / 2, Screen.height / 2 - height / 2, width, height), "Win!\nRestart")) {
 				action.Restart ();
 			}
 		}

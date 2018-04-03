@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\FirstController.cs" />
+     <Compile Include="Assets\Scripts\Model.cs" />
      <Compile Include="Assets\Scripts\SSDirector.cs" />
      <Compile Include="Assets\Scripts\UserGUI.cs" />
  <Reference Include="UnityEngine.UIAutomation">
