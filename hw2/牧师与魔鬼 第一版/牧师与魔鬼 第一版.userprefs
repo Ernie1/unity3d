@@ -1,10 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FirstController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UserGUI.cs">
     <Files>
-      <File FileName="Assets/Scripts/FirstController.cs" Line="31" Column="25" />
+      <File FileName="Assets/Scripts/UserGUI.cs" Line="11" Column="6" />
+      <File FileName="Assets/Scripts/FirstController.cs" Line="169" Column="63" />
       <File FileName="Assets/Scripts/SSDirector.cs" Line="11" Column="16" />
-      <File FileName="Assets/Scripts/UserGUI.cs" Line="43" Column="19" />
+      <File FileName="Assets/Scripts/Model.cs" Line="164" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
