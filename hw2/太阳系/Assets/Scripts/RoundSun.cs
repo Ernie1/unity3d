@@ -18,13 +18,13 @@ public class RoundSun :MonoBehaviour {
 	private Vector3 ax1, ax2, ax3, ax4 , ax5, ax6, ax7;
 
 	void Start(){
-		ax1 = new Vector3(Random.Range(1,360),Random.Range(1,360),Random.Range(1,360));
-		ax2 = new Vector3(Random.Range(1,360),Random.Range(1,360),Random.Range(1,360));
-		ax3 = new Vector3(Random.Range(1,360),Random.Range(1,360),Random.Range(1,360));
-		ax4 = new Vector3(Random.Range(1,360),Random.Range(1,360),Random.Range(1,360));
-		ax5 = new Vector3(Random.Range(1,360),Random.Range(1,360),Random.Range(1,360));
-		ax6 = new Vector3(Random.Range(1,360),Random.Range(1,360),Random.Range(1,360));
-		ax7 = new Vector3(Random.Range(1,360),Random.Range(1,360),Random.Range(1,360));
+		ax1 = new Vector3 (Random.Range (-1F, 1F), Random.Range (-1F, 1F), Random.Range (-1F, 1F));
+		ax2 = new Vector3 (Random.Range (-1F, 1F), Random.Range (-1F, 1F), Random.Range (-1F, 1F));
+		ax3 = new Vector3 (Random.Range (-1F, 1F), Random.Range (-1F, 1F), Random.Range (-1F, 1F));
+		ax4 = new Vector3 (Random.Range (-1F, 1F), Random.Range (-1F, 1F), Random.Range (-1F, 1F));
+		ax5 = new Vector3 (Random.Range (-1F, 1F), Random.Range (-1F, 1F), Random.Range (-1F, 1F));
+		ax6 = new Vector3 (Random.Range (-1F, 1F), Random.Range (-1F, 1F), Random.Range (-1F, 1F));
+		ax7 = new Vector3 (Random.Range (-1F, 1F), Random.Range (-1F, 1F), Random.Range (-1F, 1F));
 	}
 	void Update () {
 		mercury.RotateAround (sun.position, ax1, 120 * Time.deltaTime);
