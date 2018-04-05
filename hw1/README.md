@@ -1,4 +1,0 @@
-- 博客地址
-	- 离散仿真系统与 Unity 事件模型 https://blog.csdn.net/Z_J_Q_/article/details/79680467
-	- IMGUI小游戏（井子棋）https://blog.csdn.net/Z_J_Q_/article/details/79700865
-- 视频地址 https://youtu.be/S6mUy9gF_Jk
