@@ -13,8 +13,6 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
 
 	public bool someObjectHandling;
     private bool pausing;
-    //private int handleNum;
-    private int sailTo;
 
     private SSDirector director;
     private UserGUI userGUI;
@@ -68,10 +66,6 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
     }
 
     void handleClickedObject () {
-		
-        
-		//handleNum = -1;
-        //boat
         if (model.isBoat (ref objectClicked)) {
             if (someoneOnBoat ()) {             
 				actionManager.singleRunAction (objectClicked, model.boatPos [1 - model.whereBoat ()]);
@@ -79,7 +73,6 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
                 someObjectHandling = false;
             return;
         }
-        //model.setJumpFromObject (ref objectClicked);
         //priest
         int index = model.whichPriest(ref objectClicked);
         if (index != -1) {
@@ -167,16 +160,6 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
         if (!pausing) {
             if (!someObjectHandling && userGUI.action.checkObjectClicked ())
                 handleClickedObject ();
-//            if (someObjectHandling) {
-//                if (handleNum == 0)
-//                    someObjectHandling = model.sailing (sailTo);
-//                if (handleNum == 1) {
-//                    someObjectHandling = model.jumping (ref objectClicked, 0);
-//                }
-//                if (handleNum == 2) {
-//                    someObjectHandling = model.jumping (ref objectClicked, 1);
-//                }
-//            }
             userGUI.status = checkGame ();
         }
     }
@@ -210,17 +193,3 @@ public class FirstController : MonoBehaviour, ISceneController, IUserAction {
         return false;
     }
 }
-
-
-//////////////
-//public void singleRunAction (GameObject gameObject, Vector3 destination) {
-//	this.RunAction (gameObject, CCMoveToAction.GetSSAction (destination), this);
-//}
-//
-//public void doubleRunAction (GameObject gameObject, Vector3 via, Vector3 destination) {
-//	CCSequenceAction ccs = CCSequenceAction.GetSSAction (1, 0, new List<SSAction> {
-//		CCMoveToAction.GetSSAction (via, 1),
-//		CCMoveToAction.GetSSAction (destination, 1)
-//	});
-//	this.RunAction (gameObject, ccs, this);
-//}
