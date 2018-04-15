@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Resources/Scene/task2.unity
-  isLoaded: 0
-  isActive: 0
+- path: Assets/ass.unity
+  isLoaded: 1
+  isActive: 1
