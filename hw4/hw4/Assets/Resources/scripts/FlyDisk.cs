@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class flyDisk : SSAction {
+public class FlyDisk : SSAction {
     Vector3 start;   //起点
     Vector3 target;   //要到达的目标  
     Vector3 speed;    //分解速度
@@ -24,8 +24,8 @@ public class flyDisk : SSAction {
         Gravity = Vector3.zero;
         countTime = 0;
     }
-	public static flyDisk GetSSAction(int level) {
-		flyDisk action = ScriptableObject.CreateInstance<flyDisk>();
+	public static FlyDisk GetSSAction(int level) {
+		FlyDisk action = ScriptableObject.CreateInstance<FlyDisk>();
         action.level = level;
         return action;
     }
