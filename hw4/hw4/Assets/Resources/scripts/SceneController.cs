@@ -54,6 +54,7 @@ public class SceneController : MonoBehaviour, ISceneController, IUserAction
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit)) {
+            	GameText.text = "";
                 if (hit.transform.tag == "Disk")
                 {
                     explosion.transform.position = hit.collider.gameObject.transform.position;
@@ -100,6 +101,7 @@ public class SceneController : MonoBehaviour, ISceneController, IUserAction
 		RoundText.text = "Round:" + round.ToString();
 		if (scorekeeper.score >= 6) {
 			++round;
+			GameText.text = "Round " + round.ToString();
 			scorekeeper.reset ();
 			num = 0;
 		}
