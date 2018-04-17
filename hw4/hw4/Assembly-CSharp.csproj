@@ -55,7 +55,6 @@
      <Compile Include="Assets\Resources\scripts\DiskData.cs" />
      <Compile Include="Assets\Resources\scripts\DiskFactory.cs" />
      <Compile Include="Assets\Resources\scripts\Emit2.cs" />
-     <Compile Include="Assets\Resources\scripts\nn.cs" />
      <Compile Include="Assets\Resources\scripts\SceneController.cs" />
      <Compile Include="Assets\Resources\scripts\Scorekeeper.cs" />
      <Compile Include="Assets\Resources\scripts\SSAction.cs" />

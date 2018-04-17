@@ -18,7 +18,7 @@ public class CCActionManager : SSActionManager, ISSActionCallback {
 	}
 
 	public void singleRunAction (GameObject gameObject, int speedLevel) {
-		this.RunAction (gameObject, Emit2.GetSSAction (speedLevel), this);
+		this.RunAction (gameObject, flyDisk.GetSSAction (speedLevel), this);
 	}
 
 	#region ISSActionCallback implementation
