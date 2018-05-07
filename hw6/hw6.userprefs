@@ -1,0 +1,37 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Scripts/UserGUI.cs">
+    <Files>
+      <File FileName="Assets/Resources/Scripts/SSAction.cs" Line="25" Column="2" />
+      <File FileName="Assets/Resources/Scripts/SSActionManager.cs" Line="15" Column="1" />
+      <File FileName="Assets/Resources/Scripts/CCActionManager.cs" Line="12" Column="1" />
+      <File FileName="Assets/Resources/Scripts/MoveData.cs" Line="10" Column="2" />
+      <File FileName="Assets/Resources/Scripts/SceneController.cs" Line="44" Column="49" />
+      <File FileName="Assets/Resources/Scripts/SSDirector.cs" Line="13" Column="40" />
+      <File FileName="Assets/Resources/Scripts/PatrolController.cs" Line="11" Column="2" />
+      <File FileName="Assets/Resources/Scripts/PatrolFactory.cs" Line="18" Column="6" />
+      <File FileName="Assets/Resources/Scripts/UserGUI.cs" Line="19" Column="54" />
+      <File FileName="Assets/Resources/Scripts/CCMoveToAction.cs" Line="16" Column="1" />
+      <File FileName="Assets/Resources/Scripts/HeroController.cs" Line="24" Column="40" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="hw6" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="UserGUI.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
