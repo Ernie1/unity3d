@@ -67,6 +67,10 @@ public class SceneController : MonoBehaviour, ISceneController, IUserAction {
 		gameOver = true;
 	}
 
+	public bool isSafe(){
+		return hero.GetComponent<MoveData> ().planeNum == -1;
+	}
+
 	public bool isGameOver(){
 		return gameOver;
 	}

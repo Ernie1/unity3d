@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public interface IUserAction{
 	int getScore ();
+	bool isSafe ();
 	bool isGameOver ();
 }
 
@@ -12,7 +13,7 @@ public class UserGUI : MonoBehaviour{
     
 	private IUserAction action;
 	public Text scoreText;
-	public Text gameOver;
+	public Text status;
 
     void Start() {
 		action = SSDirector.getInstance ().currentSceneController as IUserAction;
@@ -20,9 +21,14 @@ public class UserGUI : MonoBehaviour{
 
     void OnGUI() {
 		scoreText.text = "Score: " + action.getScore ();
-		if (action.isGameOver ())
-			gameOver.text = "Game Over";
+		if (action.isGameOver ()) {
+			status.text = "Game Over";
+			status.fontSize = 60;
+		} else if (action.isSafe ()) {
+			status.text = "Temporarily Safe";
+			status.fontSize = 40;
+		}
 		else
-			gameOver.text = "";
+			status.text = "";
     }
 }

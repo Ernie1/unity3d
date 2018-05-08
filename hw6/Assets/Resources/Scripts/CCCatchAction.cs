@@ -20,7 +20,6 @@ public class CCCatchAction : SSAction {
 		
 		//判断结束运动
 		if (target.GetComponent<MoveData> ().planeNum == -1) {
-			Debug.Log ("fini");
 			this.destroy = true;
 			this.callback.SSActionEvent (this);
 		}
