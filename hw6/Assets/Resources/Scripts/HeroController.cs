@@ -1,5 +1,7 @@
 ﻿//https://blog.csdn.net/qq_26270779/article/details/51942890
-using System.Collections;using System.Collections.Generic;using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class HeroController : MonoBehaviour{
 	//发布与订阅模式

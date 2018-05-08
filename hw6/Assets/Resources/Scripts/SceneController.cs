@@ -11,7 +11,6 @@ public class SceneController : MonoBehaviour, ISceneController, IUserAction {
 	public Scorekeeper scorekeeper;
 	public PatrolFactory patrolFactory;
 	public CCActionManager actionManager { get; set; }
-//	public HeroController heroController;
 
 	public bool gameOver;
 
@@ -30,9 +29,6 @@ public class SceneController : MonoBehaviour, ISceneController, IUserAction {
 	}
 
 	void Start() {
-//		heroController = HeroController.getInstance ();
-//		heroController.sceneController = this;
-
 		gameOver = false;
 	}
 
@@ -50,10 +46,6 @@ public class SceneController : MonoBehaviour, ISceneController, IUserAction {
 			patrol.GetComponent<MoveData> ().planeNum = i;
 			patrol.transform.localPosition = new Vector3 (2.2f, 0, 2.2f);
 		}
-	}
-
-	void FixedUpdate() {
-		
 	}
 
 	public int getScore(){
