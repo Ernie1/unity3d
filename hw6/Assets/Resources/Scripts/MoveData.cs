@@ -7,4 +7,6 @@ public class MoveData : MonoBehaviour {
 	public int state = 0;
 	// 人物移动速度
 	public int moveSpeed = 5;
+	// 人物所在位置
+	public int planeNum = 1;
 }

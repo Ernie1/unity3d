@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Scorekeeper {
 
-	public SceneController sceneControler { get; set; }
+	public SceneController sceneController { get; set; }
 
 	private static Scorekeeper _instance;
 	public static Scorekeeper getInstance(){
@@ -18,18 +18,22 @@ public class Scorekeeper {
 	public void reset(){
 		score = 0;
 	}
-	//hero的默认位置
-	private int last = 1;
+
 	//更改plane加分
 	public void judge() {
-		GameObject[] plane = sceneControler.plane;
+		GameObject[] plane = sceneController.plane;
 		for (int i = 0; i < plane.Length; ++i) {
-			if (Vector3.Distance (plane [i].transform.position, sceneControler.hero.transform.position) <= 2.8 && i != last) {
-				last = i;
-				++score;
-				Debug.Log (score);
-				break;
+			if (Vector3.Distance (plane [i].transform.position, sceneController.hero.transform.position) <= 2.8) {
+				if (i != sceneController.hero.GetComponent<MoveData> ().planeNum) {
+					sceneController.hero.GetComponent<MoveData> ().planeNum = i;
+					++score;
+					Debug.Log (score);
+				}
+				return;
 			}
+
 		}
+		//处于交界
+		sceneController.hero.GetComponent<MoveData>().planeNum = -1;
 	}
 }

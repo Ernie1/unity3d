@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PatrolFactory : System.Object {
     private static PatrolFactory _instance;
-    public SceneController sceneControler { get; set; }
+    public SceneController sceneController { get; set; }
     public List<GameObject> used;
     public List<GameObject> free;
 

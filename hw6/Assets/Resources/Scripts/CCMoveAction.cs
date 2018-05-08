@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CCMoveToAction : SSAction {
+public class CCMoveAction : SSAction {
 
 	private int newState;
 
-	public static CCMoveToAction GetSSAction (int newState) {
-		CCMoveToAction action = ScriptableObject.CreateInstance<CCMoveToAction> ();
+	public static CCMoveAction GetSSAction (int newState) {
+		CCMoveAction action = ScriptableObject.CreateInstance<CCMoveAction> ();
 		action.newState = newState;
 		return action;
 	}
@@ -35,6 +35,8 @@ public class CCMoveToAction : SSAction {
 		}
 
 		transform.Rotate(Vector3.up, rotateValue);
+		//确保只有4个方向 
+		transform.rotation = Quaternion.Euler (0, newState * 90, 0);
 		// 移动人物
 		transform.Translate(transformValue * gameobject.GetComponent<MoveData>().moveSpeed, Space.World);
 

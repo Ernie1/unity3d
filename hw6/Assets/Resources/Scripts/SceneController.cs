@@ -11,17 +11,17 @@ public class SceneController : MonoBehaviour, ISceneController, IUserAction {
 	public Scorekeeper scorekeeper;
 	public PatrolFactory patrolFactory;
 	public CCActionManager actionManager { get; set; }
-	public HeroController heroController;
+//	public HeroController heroController;
 
 	public bool gameOver;
 
 	void Awake() {
 		//请记分员
 		scorekeeper = Scorekeeper.getInstance ();
-		scorekeeper.sceneControler = this;
+		scorekeeper.sceneController = this;
 		//请patrol工厂
 		patrolFactory = PatrolFactory.getInstance ();
-		patrolFactory.sceneControler = this;
+		patrolFactory.sceneController = this;
 		//导演
 		SSDirector director = SSDirector.getInstance();
 		director.setFPS(60);
@@ -30,8 +30,8 @@ public class SceneController : MonoBehaviour, ISceneController, IUserAction {
 	}
 
 	void Start() {
-		heroController = HeroController.getInstance ();
-		heroController.sceneControler = this;
+//		heroController = HeroController.getInstance ();
+//		heroController.sceneController = this;
 
 		gameOver = false;
 	}
@@ -47,7 +47,8 @@ public class SceneController : MonoBehaviour, ISceneController, IUserAction {
 		for (int i = 0; i < plane.Length; ++i) {
 			patrol = patrolFactory.getPatrol ();
 			patrol.transform.parent = plane [i].transform;
-			patrol.transform.localPosition = new Vector3 (2.5f, 0, 2.5f);
+			patrol.GetComponent<MoveData> ().planeNum = i;
+			patrol.transform.localPosition = new Vector3 (2.2f, 0, 2.2f);
 		}
 	}
 
@@ -61,6 +62,9 @@ public class SceneController : MonoBehaviour, ISceneController, IUserAction {
 
 	public void GameOver() {
 		HeroController.scoreKeep -= scorekeeper.judge;
+		hero.GetComponent<MoveData> ().planeNum = -1;
+		hero.GetComponent<Animator> ().SetTrigger ("death");
+		gameOver = true;
 	}
 
 	public bool isGameOver(){

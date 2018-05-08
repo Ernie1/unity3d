@@ -53,7 +53,8 @@
   <ItemGroup>
      <Compile Include="Assets\Resources\Scripts\CameraFlow.cs" />
      <Compile Include="Assets\Resources\Scripts\CCActionManager.cs" />
-     <Compile Include="Assets\Resources\Scripts\CCMoveToAction.cs" />
+     <Compile Include="Assets\Resources\Scripts\CCCatchAction.cs" />
+     <Compile Include="Assets\Resources\Scripts\CCMoveAction.cs" />
      <Compile Include="Assets\Resources\Scripts\DiskData.cs" />
      <Compile Include="Assets\Resources\Scripts\FlyDisk.cs" />
      <Compile Include="Assets\Resources\Scripts\HeroController.cs" />

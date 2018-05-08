@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 4073038119323132}
   - component: {fileID: 54195771734485286}
   - component: {fileID: 65741493840078286}
+  - component: {fileID: 95099190423490296}
   - component: {fileID: 114571766163450468}
   - component: {fileID: 114858778195886936}
   m_Layer: 0
@@ -914,6 +915,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.78, z: 1}
   m_Center: {x: 0, y: 0.89, z: 0}
+--- !u!95 &95099190423490296
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110311172039880}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f1da4a48383bb1b41b40a46c94a9e4fb, type: 3}
+  m_Controller: {fileID: 9100000, guid: 75e053ce96780b7468d7a068521fbc0d, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114571766163450468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -925,6 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8780dbd196f514458ab4881f864c39dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneController: {fileID: 0}
 --- !u!114 &114858778195886936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -937,7 +956,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  moveSpeed: 5
+  moveSpeed: 2
+  planeNum: 1
 --- !u!137 &137745902467040010
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -6,44 +6,36 @@ public class HeroController : MonoBehaviour{
 	public delegate void ScoreKeep();
 	public static event ScoreKeep scoreKeep;
 
-	private static HeroController _instance;
-	public SceneController sceneControler { get; set; }
+	public SceneController sceneController;
 
 	private Animator animator;
-
-	void Awake(){
-		_instance = this;
-	}
-
-	public static HeroController getInstance() {
-		return _instance;
-	}
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
+		sceneController = (SceneController)SSDirector.getInstance ().currentSceneController;
 	}
 
 	// Update is called once per frame
 	void FixedUpdate() {
 		//记分
-		if (scoreKeep != null){
+		if (scoreKeep != null) {
 			scoreKeep ();
-		
+			
 			// 获取控制的方向， 上下左右，
 			float KeyVertical = Input.GetAxis ("Vertical");
 			float KeyHorizontal = Input.GetAxis ("Horizontal");
 			// Debug.Log("keyVertical" + KeyVertical);
 			// Debug.Log("keyHorizontal" + KeyHorizontal);
 			if (KeyVertical == -1) {
-				sceneControler.actionManager.MoveToRunAction (gameObject, 2); // 下
+				sceneController.actionManager.MoveRunAction (gameObject, 2); // 下
 			} else if (KeyVertical == 1) {
-				sceneControler.actionManager.MoveToRunAction (gameObject, 0); // 上
+				sceneController.actionManager.MoveRunAction (gameObject, 0); // 上
 			}
 			if (KeyHorizontal == 1) {
-				sceneControler.actionManager.MoveToRunAction (gameObject, 1); // 右
+				sceneController.actionManager.MoveRunAction (gameObject, 1); // 右
 			} else if (KeyHorizontal == -1) {
-				sceneControler.actionManager.MoveToRunAction (gameObject, 3); // 左
+				sceneController.actionManager.MoveRunAction (gameObject, 3); // 左
 			}
 			if (KeyVertical == 0 && KeyHorizontal == 0) {
 				animator.SetBool ("run", false);

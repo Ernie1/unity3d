@@ -16,8 +16,12 @@ public class CCActionManager : SSActionManager, ISSActionCallback {
 		base.FixedUpdate ();
 	}
 
-	public void MoveToRunAction (GameObject gameObject, int newState) {
-		this.RunAction (gameObject, CCMoveToAction.GetSSAction (newState), this);
+	public void MoveRunAction (GameObject gameObject, int newState) {
+		this.RunAction (gameObject, CCMoveAction.GetSSAction (newState), this);
+	}
+
+	public void CatchRunAction (GameObject gameObject, GameObject target) {
+		this.RunAction (gameObject, CCCatchAction.GetSSAction (target), this);
 	}
 
 	#region ISSActionCallback implementation
