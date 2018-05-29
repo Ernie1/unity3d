@@ -20,8 +20,7 @@ public class HaloController : MonoBehaviour {
 	public int amount = 10000;
 	public float radius = 8f;
 	public float std_dev = 1f;
-	public bool clockwise = true;   // 顺时针|逆时针  
-	public float speed = 1f;        // 速度
+	public float speed = 1f;
 
 	// Use this for initialization
 	void Start () {
@@ -43,7 +42,7 @@ public class HaloController : MonoBehaviour {
 	void Update () {
 		for (int i = 0; i < amount; ++i) {
 			float step = 0.0005f+0.0003f * (i % 5) + 0.0002f*particleData [i].radius;
-			particleData [i].angle += clockwise ? speed * step : -1 * speed * step;
+			particleData [i].angle += speed * step;
 			particleData [i].radius = Mathf.PingPong (particleData [i].initRadius, 1.2f * particleData [i].initRadius);
 			particle [i].position = new Vector3 (particleData [i].radius * Mathf.Sin (particleData [i].angle), 0f, particleData [i].radius * Mathf.Cos (particleData [i].angle));
 		}
