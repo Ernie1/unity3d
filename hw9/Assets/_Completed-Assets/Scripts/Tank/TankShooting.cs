@@ -78,18 +78,7 @@ namespace Complete
 			}
         }
 
-		public void MyShoot ()
-		{
-			m_Fired = false;
-			m_CurrentLaunchForce = m_MinLaunchForce;
-			m_ShootingAudio.clip = m_ChargingClip;
-			m_ShootingAudio.Play ();
-			m_CurrentLaunchForce += m_ChargeSpeed * Time.deltaTime;
-			m_AimSlider.value = m_CurrentLaunchForce;
-			Fire ();
-		}
-
-        private void Fire ()
+        public void Fire ()
         {
             // Set the fired flag so only Fire is only called once.
             m_Fired = true;

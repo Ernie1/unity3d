@@ -33,7 +33,7 @@ namespace Complete
 				RaycastHit hit;  
 				if (Physics.Raycast (ray, out hit, Mathf.Infinity)) { 
 					if (hit.collider.gameObject.tag == "Player")
-						GetComponent<TankShooting> ().MyShoot();
+						GetComponent<TankShooting> ().Fire();
 				}
 				countTime = 0;
 			}
